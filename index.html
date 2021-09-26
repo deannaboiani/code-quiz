@@ -11,29 +11,27 @@
     <header>
         <h1>Concert Series Quiz</h1>
         <h2>Take your guess at these random concert questions!</h2>
-        <button type="button" id="start-button">Let's get rockin'</button>
+        <button type="button" id="start-button">Start</button>
     </header>
 
     <main>
         <section class="quiz-container">
 
             <div class="question-container">
-                <h1>Question: <span id="question-type" style="display: none;"></span></h1>
+                <h1>Question: <span id="question-type"></span></h1>
 
             </div>
 
-            <div class=option-container>
+            <div class="option-container">
                 <div class="answer-content">
                         <h1>Choose your answer</h1>
-                    <div class="answer-option" style="display: none;">
-                        <ol>
-                            <li id="answer-1"></li>
-                            <li id="answer-2"></li>
-                            <li id="answer-3"></li>
-                            <li id="answer-4"></li>
-                        </ol>
+                    <div class="answer-option">
+                            <button class="answer-button">A. <span id="answer-1"></span></button>
+                            <button class="answer-button">B. <span id="answer-2"></span></button>
+                            <button class="answer-button">C. <span id="answer-3"></span></button>
+                            <button class="answer-button">D. <span id="answer-4"></span></button>
                     </div>
-                    <div><button id="submit">Submit</button></div>
+                    <div><button id="submit" class="hide">Submit</button></div>
 
                 
                     </div>
@@ -44,11 +42,18 @@
         </section>
 
         <section class="highscore-container">
+            <div>
+             <p class="hide">Name: <span id="initals"></span></p> 
+            </div>
+
+            <div>
+                <p class="hide">Score: <span id="score"></span></p>
+            </div>
             
         </section>
 
         <section class="timer-container"></section>
-                <div id="timer-count"></div>
+                <div id="timer-count">Timer</div>
             </div>
 
         </section>
