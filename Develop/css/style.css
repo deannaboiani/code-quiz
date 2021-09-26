@@ -1,0 +1,26 @@
+#start-button{
+    width: 20%;
+    margin: auto;
+
+}
+
+.question-container, header {
+    text-align: center;
+}
+
+
+.option-container {
+    background-color: lightgrey;
+    width: 50%;
+    border: 15px solid teal;
+    padding: 50px;
+    margin: auto;
+  }
+
+  .option-container h1 {
+      text-align: center;
+  }
+
+  .timer-container {
+      float: top-right;
+  }

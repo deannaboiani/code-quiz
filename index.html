@@ -4,33 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="./Develop/style.css">
+    <link rel="stylesheet" href="./Develop/css/style.css">
     <title>Random Concert Series Quiz</title>
 </head>
 <body>
-    <div id="example"></div>
     <header>
         <h1>Concert Series Quiz</h1>
         <h2>Take your guess at these random concert questions!</h2>
-        <button type="button" class="start-button">Let's get rockin'</button>
+        <button type="button" id="start-button">Let's get rockin'</button>
     </header>
 
     <main>
         <section class="quiz-container">
-            <div class="question">
-                <h1>Question: <span id="question-type"></span></h1>
-            </div>
 
             <div class="question-container">
-                <h1 id="display-question"></h1>
-            </div>
+                <h1>Question: <span id="question-type" style="display: none;"></span></h1>
 
- 
+            </div>
 
             <div class=option-container>
                 <div class="answer-content">
                         <h1>Choose your answer</h1>
-                    <div class="answer-option">
+                    <div class="answer-option" style="display: none;">
                         <ol>
                             <li id="answer-1"></li>
                             <li id="answer-2"></li>
@@ -38,6 +33,7 @@
                             <li id="answer-4"></li>
                         </ol>
                     </div>
+                    <div><button id="submit">Submit</button></div>
 
                 
                     </div>
@@ -52,7 +48,7 @@
         </section>
 
         <section class="timer-container"></section>
-                <div id="timer-count">60</div>
+                <div id="timer-count"></div>
             </div>
 
         </section>
@@ -63,6 +59,6 @@
 
 
 
-    <script src="./Develop/script.js"></script>
+    <script src="./Develop/js/script.js"></script>
 </body>
 </html>
