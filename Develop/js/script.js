@@ -25,101 +25,112 @@ var initials = document.getElementById("initals")
 var score = document.getElementById("intitals")
 var submit = document.getElementById("submit");
 var secondsLeft = 60;
+var nextQBtn = document.getElementById("next-q")
+var currentQuestion = 0;
+
+
 var questionArray = [
     {
         question: "Question 1?",
         answers: [
-            {text: 'answer 1', correct: true},
-            {text: 'answer 2', correct: false},
-            {text: 'answer 3', correct: false},
-            {text: 'answer 4', correct: false},
+            { text: 'answer 1', correct: true },
+            { text: 'answer 2', correct: false },
+            { text: 'answer 3', correct: false },
+            { text: 'answer 4', correct: false },
         ]
     }, {
         question: "Question 2?",
         answers: [
-            {text: 'answer 1', correct: true},
-            {text: 'answer 2', correct: false},
-            {text: 'answer 3', correct: false},
-            {text: 'answer 4', correct: false},
+            { text: 'answer 1', correct: true },
+            { text: 'answer 2', correct: false },
+            { text: 'answer 3', correct: false },
+            { text: 'answer 4', correct: false },
         ]
     }, {
         question: "Question 3?",
         answers: [
-            {text: 'answer 1', correct: true},
-            {text: 'answer 2', correct: false},
-            {text: 'answer 3', correct: false},
-            {text: 'answer 4', correct: false},
+            { text: 'answer 1', correct: true },
+            { text: 'answer 2', correct: false },
+            { text: 'answer 3', correct: false },
+            { text: 'answer 4', correct: false },
         ]
-    },{ question: "Question 4?",
+    }, {
+        question: "Question 4?",
         answers: [
-            {text: 'answer 1', correct: true},
-            {text: 'answer 2', correct: false},
-            {text: 'answer 3', correct: false},
-            {text: 'answer 4', correct: false},
+            { text: 'answer 1', correct: true },
+            { text: 'answer 2', correct: false },
+            { text: 'answer 3', correct: false },
+            { text: 'answer 4', correct: false },
         ]
     }
 ];
 
 // on click of start button, the quiz will start
-srtBtn.addEventListener("click", startQuiz) 
+srtBtn.addEventListener("click", startQuiz);
+nextQBtn.addEventListener("click", nextQuestion());
 
 function startQuiz() {
-    console.log('started')
-    // start button is hidden when quiz starts
+    console.log('started');
+    // // start button is hidden when quiz starts
     srtBtn.style.visibility = "hidden";
 
-    // qContainer.style.visibility = "visible;"
+    // // qContainer.style.visibility = "visible;"
     nextQuestion = questionArray.sort();
     currentQuestion = 0
-    console.log(nextQuestion);
     getQuestion();
     setTime();
 
 };
 
+
 // from question array, the next question is shown
 function nextQuestion() {
-    getQuestion(nextQuestion[currentQuestion]);
-         
+    console.log('new');
+    // getQuestion(nextQuestion[currentQuestion]);
+    currentQuestion++;
 };
 
 
-    // add questions and answers from array
+
+// add questions and answers from array
 function getQuestion() {
     questionEl.textContent = questionArray[currentQuestion].question;
-    firstAnswer.textContent = questionArray[currentQuestion].answers;
-    secondAnswer.textContent = questionArray[currentQuestion].answers;
-    thirdAnswer.textContent = questionArray[currentQuestion].answers;
-    fourthAnswer.textContent = questionArray[currentQuestion].answers;
+    firstAnswer.textContent = questionArray[currentQuestion].answers[0].text;
+    secondAnswer.textContent = questionArray[currentQuestion].answers[1].text;
+    thirdAnswer.textContent = questionArray[currentQuestion].answers[2].text;
+    fourthAnswer.textContent = questionArray[currentQuestion].answers[3].text;
     console.log(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
-}
+
+};
 
 
 
-   
 
-    // function checkAnswer(answer) {
-    //     if (questionArray[currentQuestion].correct == answer) {
-    //         correctAnswer();
-    // }   else {
-    //         wrongAnswer();
 
-    //     }
-    // }  
+
+// function checkAnswer(answer) {
+//     if (questionArray[currentQuestion].answers) {
+//         correctAnswer();
+// }   else {
+//         wrongAnswer();
+
+//     }
+// }  
 
 
 // // timer counting down seconds from 60
-  function setTime() {
+function setTime() {
 
-        var timerInterval = setInterval(function () {
-            secondsLeft--;
-            timer.textContent = secondsLeft + " seconds left until game over";
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timer.textContent = secondsLeft + " seconds left until game over";
 
-            if (secondsLeft === 0) {
-                clearInterval(timerInterval);
-            }
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+        }
 
-        }, 1000);
+    }, 1000);
 
-    }
-// }
+}
+
+

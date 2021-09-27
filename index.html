@@ -10,7 +10,6 @@
 <body>
     <header>
         <h1>Concert Series Quiz</h1>
-        <h2>Take your guess at these random concert questions!</h2>
         <button type="button" id="start-button">Start</button>
     </header>
 
@@ -30,25 +29,30 @@
                             <button class="answer-button">B. <span id="answer-2"></span></button>
                             <button class="answer-button">C. <span id="answer-3"></span></button>
                             <button class="answer-button">D. <span id="answer-4"></span></button>
+                          
                     </div>
-                    <div><button id="submit" class="hide">Submit</button></div>
-
+                    
                 
-                    </div>
                 </div>
+
             </div>
-        
+       
+           <div><button type="button" id="next-q" class="hide">Next Question</button></div>
 
         </section>
 
         <section class="highscore-container">
             <div>
-             <p class="hide">Name: <span id="initals"></span></p> 
-            </div>
+             <a href="#highscore"></a> 
+               <div id="highscore hide">
 
-            <div>
-                <p class="hide">Score: <span id="score"></span></p>
+                <p>Name: <span id="initals"></span></p> 
+           
+                <p>Score: <span id="score"></span></p>
+              </div>
+
             </div>
+             
             
         </section>
 
