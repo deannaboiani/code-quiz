@@ -67,7 +67,7 @@ var questionArray = [
 
 // on click of start button, the quiz will start
 srtBtn.addEventListener("click", startQuiz);
-nextQBtn.addEventListener("click", nextQuestion());
+nextQBtn.addEventListener("click", nextQuestion);
 
 function startQuiz() {
     console.log('started');
