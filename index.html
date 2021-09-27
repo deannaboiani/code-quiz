@@ -11,6 +11,11 @@
     <header>
         <h1>Concert Series Quiz</h1>
         <button type="button" id="start-button">Start</button>
+        <div class="timer-container"></div>
+                <div id="timer-count">Timer</div>
+            </div>
+
+        </section>
     </header>
 
     <main>
@@ -30,6 +35,7 @@
                             <button class="answer-button">C. <span id="answer-3"></span></button>
                             <button class="answer-button">D. <span id="answer-4"></span></button>
                     </div>
+                    <p id=update>You have not answered yet</p>
                     <div>
                         <button type="button" id="next-q" class="hide">Next Question</button>
                     </div>
@@ -43,12 +49,15 @@
 
         <section class="highscore-container">
             <div>
-             <a href="#highscore"></a> 
-               <div id="highscore hide">
+             <a href="#highscore">Highscore</a> 
 
-                <p>Name: <span id="initals"></span></p> 
-           
-                <p>Score: <span id="score"></span></p>
+               <form id="highscore">
+                   <label for="name">Initials: </label> 
+                     <br>
+                    <input type="text" name="name" id="initial-input">
+                    <br>
+                    <label for="score"><span id="score-input">Score</span> </label>
+                </form>
               </div>
 
             </div>
@@ -56,11 +65,7 @@
             
         </section>
 
-        <section class="timer-container"></section>
-                <div id="timer-count">Timer</div>
-            </div>
-
-        </section>
+        
 
     </main>
 

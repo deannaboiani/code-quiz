@@ -27,14 +27,16 @@ var submit = document.getElementById("submit");
 var secondsLeft = 60;
 var nextQBtn = document.getElementById("next-q")
 var currentQuestion = 0;
-
+var update = document.getElementById("update")
+var body = document.querySelector("body")
+var highscore = document.getElementById("highscore-container")
 
 var questionArray = [
     {
         question: "Question 1?",
         answers: [
-            { text: 'answer 1', correct: true },
-            { text: 'answer 2', correct: false },
+            { text: 'answer 1', correct: false },
+            { text: 'answer 2', correct: true },
             { text: 'answer 3', correct: false },
             { text: 'answer 4', correct: false },
         ]
@@ -69,12 +71,14 @@ var questionArray = [
 srtBtn.addEventListener("click", startQuiz);
 nextQBtn.addEventListener("click", nextQuestion);
 
+
+
+
 function startQuiz() {
     console.log('started');
     // // start button is hidden when quiz starts
     srtBtn.style.visibility = "hidden";
 
-    // // qContainer.style.visibility = "visible;"
     nextQuestion = questionArray.sort();
     currentQuestion = 0
     getQuestion();
@@ -86,8 +90,8 @@ function startQuiz() {
 // from question array, the next question is shown
 function nextQuestion() {
     console.log('new');
-    // getQuestion(nextQuestion[currentQuestion]);
-    currentQuestion++;
+    getQuestion(nextQuestion[currentQuestion++]);
+    update.textContent = "You have not answered yet."
 };
 
 
@@ -102,20 +106,64 @@ function getQuestion() {
     console.log(firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
 
 };
+// adds a button to each answer option
+firstAnswer.addEventListener("click", checkAnswer1);
+secondAnswer.addEventListener("click", checkAnswer2);
+thirdAnswer.addEventListener("click", checkAnswer3);
+fourthAnswer.addEventListener("click", checkAnswer4);
 
 
+function checkAnswer1() {
+    if (questionArray[currentQuestion].answers[0].correct == true) {
+        console.log('correct');
+        update.textContent = "You're right! Click next question";
+        
+}   else {
+        console.log('wrong');
+        update.textContent = "You're wrong! -10 seconds, try again";
+        secondsLeft = secondsLeft-10;
 
+    }
+}; 
 
+function checkAnswer2() {
+    if (questionArray[currentQuestion].answers[1].correct == true) {
+        console.log('correct');
+        update.textContent = "You're right! Click next question";
+        
+}   else {
+        console.log('wrong');
+        update.textContent = "You're wrong! -10 seconds, try again";
+        secondsLeft = secondsLeft-10;
 
+    }
+}; 
 
-// function checkAnswer(answer) {
-//     if (questionArray[currentQuestion].answers) {
-//         correctAnswer();
-// }   else {
-//         wrongAnswer();
+function checkAnswer3() {
+    if (questionArray[currentQuestion].answers[2].correct == true) {
+        console.log('correct');
+        update.textContent = "You're right! Click next question";
+        
+}   else {
+        console.log('wrong');
+        update.textContent = "You're wrong! -10 seconds, try again";
+        secondsLeft = secondsLeft-10;
 
-//     }
-// }  
+    }
+}; 
+
+function checkAnswer4() {
+    if (questionArray[currentQuestion].answers[3].correct == true) {
+        console.log('correct');
+        update.textContent = "You're right! Click next question";
+        
+}   else {
+        console.log('wrong');
+        update.textContent = "You're wrong! -10 seconds, try again";
+        secondsLeft = secondsLeft-10;
+
+    }
+}; 
 
 
 // // timer counting down seconds from 60
@@ -127,6 +175,8 @@ function setTime() {
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
+            body.style.background="red";
+
         }
 
     }, 1000);
