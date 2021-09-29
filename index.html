@@ -5,62 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="./Develop/css/style.css">
-    <title>Random Concert Series Quiz</title>
+    <title>Halloween Quiz</title>
 </head>
 <body>
     <header>
-        <h1>Concert Series Quiz</h1>
+        <h1>Halloween Quiz</h1>
         <button type="button" id="start-button">Start</button>
-        <div class="timer-container"></div>
+        <div id="timer-container" style="display: none;"></div>
                 <div id="timer-count">Timer</div>
             </div>
+        <div> <a href="#highscore">See Highscores</a> </div>
 
         </section>
     </header>
 
     <main>
-        <section class="quiz-container">
+        <section id="quiz-container" style = "display: none;">
+            
 
-            <div class="question-container">
+            <div id="question-container">
                 <h1>Question: <span id="question-type"></span></h1>
 
             </div>
 
-            <div class="option-container">
-                <div class="answer-content">
+            <div id="option-container">
+                <div id="answer-content">
                         <h1>Choose your answer</h1>
-                    <div class="answer-option">
-                            <button class="answer-button">A. <span id="answer-1"></span></button>
-                            <button class="answer-button">B. <span id="answer-2"></span></button>
-                            <button class="answer-button">C. <span id="answer-3"></span></button>
-                            <button class="answer-button">D. <span id="answer-4"></span></button>
+                    <div id="answer-option">
+                            <button class="answer-button next-q">A. <span id="answer-1"></span></button>
+                            <button class="answer-button next-q">B. <span id="answer-2"></span></button>
+                            <button class="answer-button next-q">C. <span id="answer-3"></span></button>
+                            <button class="answer-button next-q">D. <span id="answer-4"></span></button>
                     </div>
-                    <p id=update>You have not answered yet</p>
+                    <!-- <p id>You have not answered yet</p> -->
                     <div>
-                        <button type="button" id="next-q" class="hide">Next Question</button>
+                        <!-- <button type="button" id="next-q">Next Question</button> -->
                     </div>
                     
                 
                 </div>
 
             </div>
+      </section>
 
-        </section>
+        <section>
+            
+             <div id="highscore-container" style = "display: none;">
 
-        <section class="highscore-container">
-            <div>
-             <a href="#highscore">Highscore</a> 
-
-               <form id="highscore">
+                <form>
                    <label for="name">Initials: </label> 
                      <br>
                     <input type="text" name="name" id="initial-input">
                     <br>
-                    <label for="score"><span id="score-input">Score</span> </label>
+                    <label for="score">Score: <span id="score-input"></span> </label>
+                    <br>
+                    <button type="button" id="submit-score">Submit Score</button>
                 </form>
-              </div>
 
+                <p>Highscores:</p>
+                <ul id="todo-list"></ul>
+    
             </div>
+
+            
              
             
         </section>
